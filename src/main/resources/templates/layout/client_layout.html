@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      th:fragment="layout(title, content, script)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
+
+    <title th:text="|U-Rang 💕 ${title}|">타이틀</title>
+
+    <!-- css : css는 한 파일에 만드는게 좋음 : 캐싱해놓고 쓰면 되니까! -->
+    <link rel="stylesheet" href="/css/common.css">
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+<div class="spinner-border none" role="status" style="width: 350px; height: 350px;">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<div class="header">
+    <div style="width: 1000px; border: solid; margin: 0 auto;">
+        <div style=" width: fit-content; margin: 0 auto;">
+            <h1>유랑상점</h1>
+        </div>
+        <div>
+            <ul class="inline">
+                <li class="inline-block">
+                    <a href="#">베스트</a>
+                </li>
+                <li class="inline-block">
+                    <a href="#">패션잡화</a>
+                </li>
+                <li class="inline-block">
+                    <a href="#">디지털/가전</a>
+                </li>
+                <li class="inline-block">
+                    <a href="#">전체상품</a>
+                </li>
+            </ul>
+            <ul class="inline">
+                <li class="inline-block">
+                    <a href="#">묻고 답하기</a>
+                </li>
+                <li class="inline-block">
+                    <a href="#">공지사항</a>
+                </li>
+                <li class="inline-block">
+                    <a href="#">리뷰</a>
+                </li>
+                <li class="inline-block">
+                    <a href="#">Q&A</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div th:replace="${content}"></div>
+
+<!--<div class="footer" style="height: 15%;">
+    <div class="m-0-auto" style="width: 1000px;">
+        <div>
+            <div>
+                <h2>유랑상점</h2>
+            </div>
+            <div>
+                <span>유랑 상점 / 굿즈 문의는 톡톡 문의 주세요!</span>
+            </div>
+        </div>
+        <div class="flex">
+            <strong>사업자정보</strong>
+            <div>
+                <div>
+                    <span>상호명</span>
+                    <span>주식회사 유랑</span>
+                </div>
+                <div>
+                    <span>대표자</span>
+                    <span>권용선</span>
+                </div>
+                <div>
+                    <span>고객센터</span>
+                    <span>010-6832-4398</span>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span>사업자등록번호</span>
+                    <span>7618602387</span>
+                </div>
+                <div>
+                    <span>사업장 소재지</span>
+                    <span>충청남도 천안시 서북구 두정상가3길 33 309호 (우 : 31106)</span>
+                </div>
+                <div>
+                    <span>통신판매업번호</span>
+                    <span>2022-충남천안-0543</span>
+                </div>
+                <div>
+                    <span>e-mail</span>
+                    <span>yurang43@naver.com</span>
+                </div>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+</div>-->
+<footer class="bg-light text-center text-white footer">
+    <div class="container p-4 pb-0">
+        <section class="mb-4">
+            <!-- Youtube -->
+            <a class="btn btn-white btn-floating m-1" style="background-color: #dd4b39;"
+               href="https://www.youtube.com/channel/UC9g_AAorYZSch1NTS3plkvw" role="button">
+                <i class="bi bi-youtube"></i>
+            </a>
+            <!-- U-rang Official -->
+            <a class="btn btn-white btn-floating m-1" style="background-color: #ffae41;"
+               href="https://linktr.ee/yurang_official" role="button">
+                <i class="bi bi-share-fill"></i>
+            </a>
+            <!-- blog -->
+            <a class="btn btn-white btn-floating m-1" style="background-color: #00680a;"
+               href="https://blog.naver.com/yurang43" role="button">
+                <i class="bi bi-pencil-fill"></i>
+            </a>
+            <!-- Twitter -->
+            <a class="btn btn-white btn-floating m-1" style="background-color: #55acee;"
+               href="http://twitter.com/yurang_official" role="button">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <!-- Instagram -->
+            <a class="btn btn-white btn-floating m-1" style="background-color: #ac2bac;"
+               href="http://twitter.com/yurang_official" role="button">
+                <i class="bi bi-instagram"></i>
+            </a>
+        </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright: <a class="text-white"
+                             href="https://smartstore.naver.com/yurangmall/profile?cp=1/">yurangmall</a>
+    </div>
+</footer>
+
+<!--script-->
+<script th:replace="${script}"></script>
+
+</body>
+</html>
