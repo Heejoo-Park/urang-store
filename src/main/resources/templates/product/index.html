@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/client_layout :: layout('메인', ~{::.content}, ~{::script})}">
+<head>
+    <title></title>
+</head>
+<body>
+<div class="content">
+
+    <div class="main">
+        <div class="search-content">
+            <div class="container px-4 px-lg-5 mt-3">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
+                    <!-- 상품 목록 -->
+                    <th:block th:each="product, status : ${productList}">
+                        <div class="col mb-5">
+                            <a th:href="@{/urang/product/detail/{idx}(idx=${product.idx})}">
+                                <div class="card h-90 product" th:data-product-idx="${product.idx}">
+                                    <div>
+                                        <div th:if="${product.best == 1}">
+                                            <div class="div-logo">
+                                                <span class="logo-best">BEST</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <th:block th:if="${product.productImageList.size() > 0}">
+                                                <img class="card-img-top productImage" th:src="${product.productImageList.get(0).imageUrl}" alt="...">
+                                            </th:block>
+                                            <th:block th:if="${product.productImageList.size() == 0}">
+                                                <img class="card-img-top productImage" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">
+                                            </th:block>
+                                        </div>
+                                    </div>
+                                    <!-- 상품 정보 -->
+                                    <div class="card-body p-product-info font-15">
+                                        <div>
+                                            <!-- Product name -->
+                                            <h6 class="fw-bolder" th:text="${product.name}">상품명</h6>
+                                            <!-- Product price -->
+                                            <div>
+                                                <!-- 할인 적용 안됐을 때 -->
+                                                <div th:if="${product.discount == 0}">
+                                                    <span th:text="${product.resultPrice + '원'}"></span>
+                                                </div>
+                                                <!-- 할인 적용 됐을 때 -->
+                                                <div th:if="${product.discount > 0}">
+                                                    <span th:text="${#numbers.formatInteger(product.resultPrice, 0, 'COMMA') + '원'}"></span>
+                                                    <span th:text="${#numbers.formatInteger(product.price, 0, 'COMMA') + '원'}" class="product-price font-13"></span>
+                                                    <span th:text="${product.discount + '%'}" class="product-discount"></span>
+                                                </div>
+                                            </div>
+                                            <!-- Product description -->
+                                            <div>
+                                                <p class="font-13" th:text="${product.description}"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--<div>
+                                        리뷰 <span></span>
+                                        평점 <span></span>
+                                    </div>-->
+                                </div>
+                            </a>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script th:inline="javascript">
+</script>
+</body>
+</html>

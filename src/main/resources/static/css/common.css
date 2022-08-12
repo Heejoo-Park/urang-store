@@ -1,9 +1,22 @@
-html, body { width: 100%; height: 100%; }
-.header { height: 15%; }
-.content { height: 70%; }
-.footer { height: 15%; }
+/*html, body { width: 100%; height: 100%; }*/
+body { display: flex; min-height: 100vh; flex-direction: column; }
+.header { margin-top: 15px; }
+.div-header { width: 1300px; border: solid; margin: 0 auto; height: 130px; padding: 14px; }
+.div-header .header-title { width: fit-content; margin: 0 auto; }
+/*.content { width: 70%; margin: 60px auto 10px;}*/
+.content { flex: 1; margin: 30px auto 10px; }
+.footer { bottom: 0; }
+.logo-youtube { background-color: #dd4b39 !important; }
+.logo-official { background-color: #ffae41 !important; }
+.logo-blog { background-color: #00680a !important; }
+.logo-twitter { background-color: #55acee !important; }
+.logo-instagram { background-color: #ac2bac !important; }
+.logo-copyright { background-color: rgba(0, 0, 0, 0.2) !important; }
+.spinner { width: 350px; height: 350px !important; }
 
 /* common */
+a { color: #000000 !important; text-decoration-line: none !important; }
+
 .none { display: none !important;}
 .flex { display: flex; }
 .flex_align_center { display: flex; align-items: center; }
@@ -16,10 +29,21 @@ html, body { width: 100%; height: 100%; }
 .m-r-15 { margin-right: 15px; }
 .m-l-10 { margin-left: 10px; }
 .m-l-15 { margin-left: 15px; }
+.font-13 { font-size: 13px; }
+.font-15 { font-size: 15px; }
 
-.f-r { float: right; }
-.f-l { float: left; }
+.float-right { float: right; }
+.float-left { float: left; }
 
 /* client_layout */
-.inline-block a { display: block; padding: 0 23px 0 22px; line-height: 38px; font-size: 14px; color: #000; }
+.inline-block a { display: block; padding: 0 23px 0 22px; line-height: 38px; font-size: 14px; color: #000; text-decoration-line: none; }
 .btn-white { color: #fff !important;}
+
+/* /urang/product  */
+.product { width: auto; }
+.product:hover { transform: scale(1.1); }
+.p-product-info { width: 268px; height: 145px; padding: 1.5rem 1.5rem 0 1.5rem !important; }
+.product-price { text-decoration: line-through; }
+.product-discount { color: #569dff; font-weight: bolder; }
+.product .div-logo { position: absolute; padding: 0 10px 0 7px; background: #4eb6dd; }
+.div-logo .logo-best { color: white; font-weight: 600; font-style: oblique; }

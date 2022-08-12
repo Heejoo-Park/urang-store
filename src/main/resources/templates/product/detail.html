@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/client_layout :: layout('상세', ~{::.content}, ~{::script})}">
+<head>
+    <title></title>
+</head>
+<body>
+<div class="content">
+
+    <div class="main">
+        <div class="search-content">
+            <div class="container px-4 px-lg-5 mt-3">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
+
+                    <div>
+                        <!-- 이미지 -->
+                        <div></div>
+                        <!-- 상품 정보-->
+                        <!--<div>
+                            &lt;!&ndash;타이틀&ndash;&gt;
+                            <div></div>
+                            &lt;!&ndash;가격&ndash;&gt;
+                            <div>
+                                &lt;!&ndash; 할인 적용 안됐을 때 &ndash;&gt;
+                                <div th:if="${product.discount == 0}">
+                                    <span th:text="${product.resultPrice + '원'}"></span>
+                                </div>
+                                &lt;!&ndash; 할인 적용 됐을 때 &ndash;&gt;
+                                <div th:if="${product.discount > 0}">
+                                    <span th:text="${#numbers.formatInteger(product.resultPrice, 0, 'COMMA') + '원'}"></span>
+                                    <span th:text="${#numbers.formatInteger(product.price, 0, 'COMMA') + '원'}" class="product-price font-13"></span>
+                                    <span th:text="${product.discount + '%'}" class="product-discount"></span>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script th:inline="javascript">
+</script>
+</body>
+</html>

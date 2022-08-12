@@ -21,17 +21,38 @@
 </head>
 <body>
 
-<div class="spinner-border none" role="status" style="width: 350px; height: 350px;">
+<div class="spinner-border spinner none" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
 
 <div class="header">
-    <div style="width: 1000px; border: solid; margin: 0 auto;">
-        <div style=" width: fit-content; margin: 0 auto;">
+    <div class="login float-right">
+        <ul class="inline">
+            <!-- 로그인 전 : 로그인 -->
+            <li class="inline-block">
+                <a href="#">장바구니</a>
+            </li>
+            <li class="inline-block">
+                <a href="/login">로그인</a>
+            </li>
+            <!-- 로그인 후 : 마이페이지, 장바구니, 로그아웃 -->
+            <!--<li class="inline-block">
+                <a href="#">장바구니</a>
+            </li>
+            <li class="inline-block">
+                <a href="#">마이페이지</a>
+            </li>
+            <li class="inline-block">
+                <a href="/logout">로그아웃</a>
+            </li>-->
+        </ul>
+    </div>
+    <div class="div-header">
+        <div class="header-title">
             <h1>유랑상점</h1>
         </div>
         <div>
-            <ul class="inline">
+            <div class="float-left">
                 <li class="inline-block">
                     <a href="#">베스트</a>
                 </li>
@@ -44,8 +65,8 @@
                 <li class="inline-block">
                     <a href="#">전체상품</a>
                 </li>
-            </ul>
-            <ul class="inline">
+            </div>
+            <div class="float-right">
                 <li class="inline-block">
                     <a href="#">묻고 답하기</a>
                 </li>
@@ -58,7 +79,7 @@
                 <li class="inline-block">
                     <a href="#">Q&A</a>
                 </li>
-            </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -118,35 +139,30 @@
     <div class="container p-4 pb-0">
         <section class="mb-4">
             <!-- Youtube -->
-            <a class="btn btn-white btn-floating m-1" style="background-color: #dd4b39;"
-               href="https://www.youtube.com/channel/UC9g_AAorYZSch1NTS3plkvw" role="button">
+            <a class="btn btn-white btn-floating m-1 logo-youtube" href="https://www.youtube.com/channel/UC9g_AAorYZSch1NTS3plkvw" role="button">
                 <i class="bi bi-youtube"></i>
             </a>
             <!-- U-rang Official -->
-            <a class="btn btn-white btn-floating m-1" style="background-color: #ffae41;"
-               href="https://linktr.ee/yurang_official" role="button">
+            <a class="btn btn-white btn-floating m-1 logo-official" href="https://linktr.ee/yurang_official" role="button">
                 <i class="bi bi-share-fill"></i>
             </a>
             <!-- blog -->
-            <a class="btn btn-white btn-floating m-1" style="background-color: #00680a;"
-               href="https://blog.naver.com/yurang43" role="button">
+            <a class="btn btn-white btn-floating m-1 logo-blog" href="https://blog.naver.com/yurang43" role="button">
                 <i class="bi bi-pencil-fill"></i>
             </a>
             <!-- Twitter -->
-            <a class="btn btn-white btn-floating m-1" style="background-color: #55acee;"
-               href="http://twitter.com/yurang_official" role="button">
+            <a class="btn btn-white btn-floating m-1 logo-twitter" href="http://twitter.com/yurang_official" role="button">
                 <i class="bi bi-twitter"></i>
             </a>
             <!-- Instagram -->
-            <a class="btn btn-white btn-floating m-1" style="background-color: #ac2bac;"
-               href="http://twitter.com/yurang_official" role="button">
+            <a class="btn btn-white btn-floating m-1 logo-instagram" href="http://twitter.com/yurang_official" role="button">
                 <i class="bi bi-instagram"></i>
             </a>
         </section>
     </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright: <a class="text-white"
-                             href="https://smartstore.naver.com/yurangmall/profile?cp=1/">yurangmall</a>
+    <div class="text-center p-3 logo-copyright">
+        © 2022 Copyright:
+        <a class="text-white" href="https://smartstore.naver.com/yurangmall/profile?cp=1/">yurangmall</a>
     </div>
 </footer>
 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heejoo.urang.module.product.ProductMapper">
+    <resultMap id="productMap" type="product">
+        <id property="idx" column="idx" />
+        <result column="name" property="name"/>
+        <result column="best" property="best"/>
+        <result column="price" property="price"/>
+        <result column="discount" property="discount"/>
+        <result column="result_price" property="resultPrice"/>
+        <result column="description" property="description"/>
+        <result column="enabled" property="enabled"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="modified_at" property="modifiedAt"/>
+        <collection property="productImageList" columnPrefix="img_" ofType="productImage">
+            <id property="idx" column="idx" />
+            <result column="productIdx" property="productIdx"/>
+            <result column="imageUrl" property="imageUrl"/>
+            <result column="imageOrder" property="imageOrder"/>
+            <result column="enabled" property="enabled"/>
+            <result column="createdAt" property="createdAt"/>
+            <result column="modifiedAt" property="modifiedAt"/>
+        </collection>
+
+    </resultMap>
+
+    <select id="selectProductList" resultMap="productMap">
+        SELECT p.idx, p.NAME, p.best, p.price, p.discount, p.result_price, p.description, p.enabled, p.created_at, p.modified_at,
+               i.idx as img_idx, i.product_idx as img_productIdx, i.image_url as img_imageUrl, i.image_order as img_imageOrder, i.enabled as img_enabled, i.created_at as img_createdAt, i.modified_at as img_modifiedAt
+        FROM product p, product_image i
+        WHERE p.idx = i.product_idx AND p.enabled = 1 AND i.enabled = 1
+        ORDER BY p.idx, i.image_order
+    </select>
+
+    <!--<select id="selectProductDetailByIdx" resultMap="productMap">
+        /*SELECT p.idx, p.NAME, p.best, p.price, p.discount, ROUND((p.price - (p.discount * 0.01)), 0) AS resultPrice, p.description, p.enabled, p.created_at, p.modified_at,*/
+        SELECT p.idx, p.NAME, p.best, p.price, p.discount, p.result_price, p.description, p.enabled, p.created_at, p.modified_at,
+        i.idx as img_idx, i.product_idx as img_productIdx, i.image_url as img_imageUrl, i.image_order as img_imageOrder, i.enabled as img_enabled, i.created_at as img_createdAt, i.modified_at as img_modifiedAt
+        FROM product p, product_image i
+        WHERE p.idx = i.product_idx AND p.enabled = 1 AND i.enabled = 1 AND p.idx = #{product.idx}
+        ORDER BY p.idx, i.image_order
+    </select>-->
+
+</mapper>
+        
